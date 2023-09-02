@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Speech to Text</title>
+  </head>
+  <body>
+    <div class="container">
+      <p class="heading">Speech to Text
+        <style>
+
+        </style></p>
+      <div class="options">
+        <div class="anguage">
+          <p>Language</p>
+          <select name="input-language" id="language"></select>
+        </div>
+      </div>
+      <div class="line"></div>
+      <button class="btn record">
+        <div class="icon">
+          <ion-icon name="mic-outline"></ion-icon>
+          <img src="bars.svg" alt="" />
+        </div>
+        <style>
+          btn record
+        </style>
+        <p>Start Listening</p>
+      </button>
+      <p class="heading">Result :</p>
+      <div
+        class="result"
+        spellcheck="false"
+        placeholder="Text will be shown here"
+      >
+        <p class="interim"></p>
+      </div>
+      <div class="buttons">
+        <button class="btn clear">
+          <ion-icon name="trash-outline"></ion-icon>
+          <p>Clear</p>
+        </button>
+        <button class="btn download" disabled>
+          <ion-icon name="cloud-download-outline"></ion-icon>
+          <p>Download</p>
+        </button>
+      </div>
+      <div class="slider-thumb">
+        <style>
+          body {
+            height: 100vh;
+            background: linear-gradient(90deg,#e52e71,#ff8a00);
+
+          }
+
+          .slider-thumb::before {
+            position: absolute;
+            content: "";
+            left: 30%;
+            top: 20%;
+            width: 450px;
+            height: 450px;
+            background: #17141d;
+            border-radius: 62% 47% 82% 35% / 45% 45% 80% 66%;
+            will-change: border-radius, transform, opacity;
+            animation: sliderShape 5s linear infinite;
+            display: block;
+            z-index: -1;
+            -webkit-animation: sliderShape 5s linear infinite;
+          }
+          @keyframes sliderShape{
+            0%,100%{
+              border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+              transform: translate3d(0,0,0) rotateZ(0.01deg);
+            }
+            34%{
+              border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
+              transform:  translate3d(0,5px,0) rotateZ(0.01deg);
+            }
+            50%{
+              transform: translate3d(0,0,0) rotateZ(0.01deg);
+            }
+            67%{
+              border-radius: 100% 60% 60% 100% / 100% 100% 60% 60% ;
+              transform: translate3d(0,-3px,0) rotateZ(0.01deg);
+            }
+          }
+
+        </style>
+      </div>
+    </div>
+    <!-- IONICONS -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <!-- LANGUAGES -->
+    <script src="languages.js"></script>
+
+    <!-- SCRIPT -->
+    <script src="script.js"></script>
+  </body>
+</html>
